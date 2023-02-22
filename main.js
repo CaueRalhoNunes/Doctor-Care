@@ -4,6 +4,10 @@ function callFunctions() {
   changeButtonColor();
 }
 
+/*
+
+*/
+
 function onScroll() {
   if (scrollY > 0) {
     document.getElementById("navigation").classList.add("scroll");
@@ -11,6 +15,10 @@ function onScroll() {
     document.getElementById("navigation").classList.remove("scroll");
   }
 }
+
+/*
+
+*/
 
 function openMenu() {
   document.body.classList.add("menu-expand");
@@ -23,17 +31,17 @@ function closeMenu() {
 function showButton() {
   if (scrollY > 415) {
     document.getElementById(`backButton`).classList.add(`show`);
-  }
-  else{
+  } else {
     document.getElementById("backButton").classList.remove("show");
   }
 }
 
+//
+
 function changeButtonColor() {
-  if (scrollY > 3660) {
+  if (scrollY > 3660 || scrollY > 2140) {
     document.getElementById(`backButton`).classList.add(`color`);
-  }
-  else{
+  } else {
     document.getElementById("backButton").classList.remove("color");
   }
 }
@@ -54,6 +62,6 @@ window.addEventListener("scroll", function () {
   let scrollPosition = window.scrollY;
   if (scrollPosition >= 1) {
     element.classList.add("reveal");
+    console.log(scrollPosition);
   } else if (scrollPosition < 260) element.classList.remove("reveal");
 });
-
